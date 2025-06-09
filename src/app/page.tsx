@@ -16,7 +16,7 @@ export default function Home() {
             Premium rashguards for Brazilian Jiu-Jitsu
           </p>
           <Link href="/shop">
-            <Button size="lg" className="bg-white text-red-900 hover:bg-gray-100">
+            <Button variant="default" size="lg" className="bg-white text-red-900 hover:bg-gray-100">
               Shop Now
             </Button>
           </Link>

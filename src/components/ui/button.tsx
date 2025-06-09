@@ -1,13 +1,16 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
+export type ButtonVariant = 'default' | 'outline' | 'ghost'
+export type ButtonSize = 'default' | 'sm' | 'lg'
+
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'ghost'
-  size?: 'default' | 'sm' | 'lg'
+  variant?: ButtonVariant
+  size?: ButtonSize
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
+  ({ className, variant = 'default', size = 'default', children, ...props }, ref) => {
     return (
       <button
         className={cn(
@@ -26,7 +29,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         ref={ref}
         {...props}
-      />
+      >
+        {children}
+      </button>
     )
   }
 )
