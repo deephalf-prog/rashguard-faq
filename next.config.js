@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Build configuration
+  output: 'standalone',
+  poweredByHeader: false,
+  reactStrictMode: true,
+  swcMinify: true,
+
+  // TypeScript and ESLint configuration
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -12,26 +19,69 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  output: 'standalone',
+
+  // Image configuration
   images: {
     domains: ['cdn.shopify.com'],
+    unoptimized: true,
   },
-  reactStrictMode: true,
-  swcMinify: true,
-  trailingSlash: false,
+
+  // Redirects configuration
+  async redirects() {
+    return [
+      {
+        source: '/index',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
+
+  // Headers configuration
   async headers() {
     return [
       {
         source: '/:path*',
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
           },
         ],
       },
     ]
   },
+
+  // Add trailing slashes to prevent 404s
+  trailingSlash: true,
+
+  // Ensure proper page routing
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 }
 
 module.exports = nextConfig 
