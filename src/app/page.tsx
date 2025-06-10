@@ -1,6 +1,12 @@
+import { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { WaitlistForm } from "@/components/waitlist-form"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "Deep Half Rashguard - Premium BJJ Rashguards",
+  description: "Premium BJJ rashguards designed for performance, comfort, and style. Join our waitlist to be the first to know when we launch.",
+}
 
 export default function HomePage() {
   return (
