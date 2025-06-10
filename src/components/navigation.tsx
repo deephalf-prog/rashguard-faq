@@ -37,7 +37,7 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <Link href="/#waitlist">
+            <Link href="/waitlist">
               <Button className="bg-red-600 hover:bg-red-700">Join Waitlist</Button>
             </Link>
           </div>
@@ -65,7 +65,7 @@ export function Navigation() {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Link href="/#waitlist" onClick={() => setIsOpen(false)}>
+                <Link href="/waitlist" onClick={() => setIsOpen(false)}>
                   <Button className="w-full bg-red-600 hover:bg-red-700">Join Waitlist</Button>
                 </Link>
               </div>

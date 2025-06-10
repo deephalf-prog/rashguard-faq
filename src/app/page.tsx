@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { WaitlistForm } from "@/components/waitlist-form"
+import Link from "next/link"
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -13,9 +14,11 @@ export default function Home() {
           <p className="text-xl md:text-2xl mb-8 text-gray-200">
             Premium rashguards designed for performance, comfort, and style
           </p>
-          <Button variant="default" className="bg-red-600 hover:bg-red-700 text-lg px-8 py-6">
-            Join the Waitlist
-          </Button>
+          <Link href="/waitlist">
+            <Button variant="default" className="bg-red-600 hover:bg-red-700 text-lg px-8 py-6">
+              Join the Waitlist
+            </Button>
+          </Link>
         </div>
       </section>
 
