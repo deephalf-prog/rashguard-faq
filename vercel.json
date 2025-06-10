@@ -11,30 +11,6 @@
       "use": "@vercel/next"
     }
   ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/"
-    },
-    {
-      "src": "/index",
-      "dest": "/",
-      "status": 301
-    },
-    {
-      "src": "/home",
-      "dest": "/",
-      "status": 301
-    },
-    {
-      "src": "/waitlist",
-      "dest": "/waitlist"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
