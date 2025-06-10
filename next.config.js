@@ -87,11 +87,17 @@ const nextConfig = {
     ]
   },
 
-  // Add trailing slashes to prevent 404s
-  trailingSlash: true,
+  // Remove trailing slashes to prevent 404s
+  trailingSlash: false,
 
   // Ensure proper page routing
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+
+  // Add base path if needed
+  basePath: '',
+
+  // Add asset prefix if needed
+  assetPrefix: '',
 }
 
 module.exports = nextConfig 
