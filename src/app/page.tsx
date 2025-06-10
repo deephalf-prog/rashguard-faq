@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     title: "Deep Half Rashguard - Premium BJJ Rashguards",
     description: "Premium BJJ rashguards designed for performance and style",
     type: "website",
+    url: "https://deep-half-rashguard.vercel.app",
   },
 }
 

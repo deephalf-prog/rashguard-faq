@@ -22,11 +22,20 @@ const nextConfig = {
 
   // Image configuration
   images: {
-    domains: ['cdn.shopify.com'],
+    domains: ['deep-half-rashguard.vercel.app'],
     unoptimized: true,
   },
 
   // Redirects configuration
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: '/',
+      },
+    ]
+  },
+
   async redirects() {
     return [
       {
@@ -88,7 +97,7 @@ const nextConfig = {
   },
 
   // Remove trailing slashes to prevent 404s
-  trailingSlash: false,
+  trailingSlash: true,
 
   // Ensure proper page routing
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
